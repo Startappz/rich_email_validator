@@ -1,4 +1,4 @@
-# RichEmailValidator
+# Rich Email Validator
 
 A set of helpers to validate emails:
 
@@ -34,7 +34,7 @@ Or install it yourself as:
 ```ruby
 require 'rich_email_validator'
 RichEmailValidator.valid_email?('khellls@gmail.com') # => true
-RichEmailValidator.valid_email?('khellls@g.com') # => false because DNS lookup check
+RichEmailValidator.valid_email?('khellls@g.com') # => false because of DNS lookup check
 ```
 ### Set a predfined Regexp
 
