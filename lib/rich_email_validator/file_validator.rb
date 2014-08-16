@@ -8,7 +8,7 @@ module RichEmailValidator
       # @param input_file_path [File]
       # @param [Hash] options
       # @option options [#to_int] :threads_count number of threads that will
-      #  be fired simultaneously to calculate the result
+      #  be fired simultaneously to calculate the result. Default 20, max 100
       # @return [Array]
       def filter(input_file_path, options = {})
         new(input_file_path, options).filter
@@ -19,7 +19,7 @@ module RichEmailValidator
       # @param output_file_path [File]
       # @param [Hash] options
       # @option options [#to_int] :threads_count number of threads that will
-      #  be fired simultaneously to calculate the result
+      #  be fired simultaneously to calculate the result. Default 20, max 100
       def export_valid_list(input_file_path, output_file_path, options = {})
         new(input_file_path, options).export_valid_list(output_file_path)
       end
@@ -29,7 +29,7 @@ module RichEmailValidator
     # @param input_file_path [File]
     # @param [Hash] options
     # @option options [#to_int] :threads_count number of threads that will
-    #  be fired simultaneously to calculate the result
+    #  be fired simultaneously to calculate the result. Default 20, max 100
     def initialize(input_file_path, options = {})
       @input_file_path = input_file_path
       @options = options

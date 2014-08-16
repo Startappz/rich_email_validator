@@ -9,7 +9,7 @@ module RichEmailValidator
       # @param list [Enumerator]
       # @param [Hash] options
       # @option options [#to_int] :threads_count number of threads that will
-      #  be fired simultaneously to calculate the result
+      #  be fired simultaneously to calculate the result. Default 20, max 100
       # @return [Array]
       def filter(list, options = {})
         new(list, options).filter
@@ -22,10 +22,11 @@ module RichEmailValidator
     # @param list [Enumerator]
     # @param [Hash] options
     # @option options [#to_int] :threads_count number of threads that will
-    #  be fired simultaneously to calculate the result
+    #  be fired simultaneously to calculate the result. Default 20, max 100
     def initialize(list, options = {})
       @list = list
       @threads_count = options.fetch(:threads_count) { 20 }
+      fail ArgumentError, "Threads can't exceed 100" if @threads_count > 100
       @result = []
       @total_slices = (@list.size / @threads_count.to_f).ceil
     end
@@ -55,6 +56,11 @@ module RichEmailValidator
         email = list[list_index]
         result[list_index] = email if EmailValidator.valid?(email)
       end
+      sleep_timer(start_index)
+    end
+
+    def sleep_timer(index)
+      sleep(1) if (index % ((100 / threads_count) * threads_count)) == 0
     end
   end
 end
