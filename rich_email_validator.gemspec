@@ -8,11 +8,11 @@ Gem::Specification.new do |gem|
   gem.version       = RichEmailValidator::Version
   gem.authors       = ["Khaled alHabache"]
   gem.email         = ["khellls@gmail.com"]
-  gem.summary       = %q{Set of helpers to validate emails}
-  gem.description   = %q{Set of helpers to validate emails}
+  gem.summary       = %q{Set of rich helpers for email validation}
+  gem.description   = %q{Set of rich helpers for email validation}
   gem.homepage      = "https://github.com/Startappz/rich_email_validator"
   gem.license       = 'LGPL-3'
-  gem.required_ruby_version = '>= 1.9.2'
+  gem.required_ruby_version = '>= 1.9.3'
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
   gem.test_files = Dir.glob('spec/**/*')
