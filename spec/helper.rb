@@ -9,7 +9,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 
 SimpleCov.start do
   add_filter '/spec/'
-  minimum_coverage(99.15)
+  minimum_coverage(95)
 end
 
 require_relative '../lib/rich_email_validator'
