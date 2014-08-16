@@ -1,5 +1,8 @@
 # Rich Email Validator
 
+[![Gem Version](https://badge.fury.io/rb/rich_email_validator.svg)](http://badge.fury.io/rb/rich_email_validator) [![Build Status](https://travis-ci.org/Startappz/rich_email_validator.svg?branch=master)](https://travis-ci.org/Startappz/rich_email_validator) [![Coverage Status](https://coveralls.io/repos/Startappz/rich_email_validator/badge.png)](https://coveralls.io/r/Startappz/rich_email_validator) [![Dependency Status](https://gemnasium.com/Startappz/rich_email_validator.svg)](https://gemnasium.com/Startappz/rich_email_validator)
+ [![Code Climate](https://codeclimate.com/github/khelll/feedlr/badges/gpa.svg)](https://codeclimate.com/github/khelll/feedlr)
+
 A set of helpers to validate emails:
 
 - [x] Validate an email
