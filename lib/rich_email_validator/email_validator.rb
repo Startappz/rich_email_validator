@@ -18,7 +18,11 @@ module RichEmailValidator
 
       def default_email_regexp
         @default_email_regexp ||=
-          /\A[\w!#$%&'*+\/=?`{|}~^-]+(?:\.[\w!#$%&'*+\/=?`{|}~^-]+)*@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\Z/i
+          %r{
+            \A[\w!#$%&'*+/=?`{|}~^-]+
+            (?:\.[\w!#$%&'*+/=?`{|}~^-]+)*
+            @(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\Z
+          }ix
       end
     end
 
