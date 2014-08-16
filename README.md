@@ -1,7 +1,6 @@
 # Rich Email Validator
 
-[![Gem Version](https://badge.fury.io/rb/rich_email_validator.svg)](http://badge.fury.io/rb/rich_email_validator) [![Build Status](https://travis-ci.org/Startappz/rich_email_validator.svg?branch=master)](https://travis-ci.org/Startappz/rich_email_validator) [![Coverage Status](https://coveralls.io/repos/Startappz/rich_email_validator/badge.png)](https://coveralls.io/r/Startappz/rich_email_validator) [![Dependency Status](https://gemnasium.com/Startappz/rich_email_validator.svg)](https://gemnasium.com/Startappz/rich_email_validator)
- [![Code Climate](https://codeclimate.com/github/khelll/feedlr/badges/gpa.svg)](https://codeclimate.com/github/khelll/feedlr)
+[![Gem Version](https://badge.fury.io/rb/rich_email_validator.svg)](http://badge.fury.io/rb/rich_email_validator) [![Build Status](https://travis-ci.org/Startappz/rich_email_validator.svg?branch=master)](https://travis-ci.org/Startappz/rich_email_validator) [![Coverage Status](https://coveralls.io/repos/Startappz/rich_email_validator/badge.png)](https://coveralls.io/r/Startappz/rich_email_validator) [![Dependency Status](https://gemnasium.com/Startappz/rich_email_validator.svg)](https://gemnasium.com/Startappz/rich_email_validator) [![Code Climate](https://codeclimate.com/github/Startappz/rich_email_validator/badges/gpa.svg)](https://codeclimate.com/github/Startappz/rich_email_validator)
 
 A set of helpers to validate emails:
 
@@ -64,7 +63,7 @@ list = ['khellls@g.com', 'khellls@gmail.com']
 RichEmailValidator.filter_list(list) #=> ["khellls@gmail.com"]
 
 # You have a fine grained control, so you can control threads count
-# Default is 20
+# Default is 20, max 100
 RichEmailValidator.filter_list(list, threads_count: 15)
 
 ```
@@ -77,7 +76,7 @@ File.readlines(file_path).size #=> 15
 RichEmailValidator.filter_file(file_path).size #=> 10 
 
 # You have a fine grained control, so you can control threads count
-# Default is 20
+# Default is 20, max 100
 RichEmailValidator.filter_file(file_path, threads_count: 15)
 
 ```
@@ -92,7 +91,7 @@ RichEmailValidator.export_valid_list(file_path, output_path)
 File.readlines('output.txt').size #=> 10 
 
 # You have a fine grained control, so you can control threads count
-# Default is 20
+# Default is 20, max 100
 RichEmailValidator.export_valid_list(file_path, output_path, threads_count: 15)
 
 ```
