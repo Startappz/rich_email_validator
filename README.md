@@ -35,17 +35,21 @@ Or install it yourself as:
 
 ```ruby
 require 'rich_email_validator'
-RichEmailValidator.valid_email?('khellls@gmail.com') # => true
-RichEmailValidator.valid_email?('khellls@g.com') # => false because of DNS lookup check
+RichEmailValidator.valid_email?('someone@gmail.com') # => true
+RichEmailValidator.valid_email?('someone@g.com') # => false because of DNS lookup check
 ```
-### Set a predfined Regexp
+### Set a predfined regular expression
 
 It's only used for **performace reasons** to filter the format of an email before doing a DNS lookup check.
 
 The current value is:
 
 ```ruby
-/\A[\w!#$%&'*+\/=?`{|}~^-]+(?:\.[\w!#$%&'*+\/=?`{|}~^-]+)*@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\Z/i
+%r{
+    \A[\w!#$%&'*+/=?`{|}~^-]+
+    (?:\.[\w!#$%&'*+/=?`{|}~^-]+)*
+    @(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\Z
+  }ix
 
 ```
 
@@ -59,8 +63,8 @@ RichEmailValidator.email_regexp = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 ### Filter a list of emails
 
 ```ruby
-list = ['khellls@g.com', 'khellls@gmail.com']
-RichEmailValidator.filter_list(list) #=> ["khellls@gmail.com"]
+list = ['someone@g.com', 'someone@gmail.com']
+RichEmailValidator.filter_list(list) #=> ["someone@gmail.com"]
 
 # You have a fine grained control, so you can control threads count
 # Default is 20, max 100
